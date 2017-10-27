@@ -172,9 +172,10 @@ extension HFSwipeView {
     
     internal func updateIndexBasedOnContentOffset() {
         
-        if !circulating {
-            return
-        }
+        // prevents non circular swipeviews from correctly updating indexes
+        //if !circulating {
+        //    return
+        //}
         
         guard let indexPath = indexPathForItemAtPoint(collectionView.contentOffset) else {
             //print("indexPathForItemAtPoint returned nil.")
