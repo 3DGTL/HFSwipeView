@@ -8,7 +8,6 @@
 
 import UIKit
 import HFSwipeView
-import TinyLog
 
 class ImageCirculatingController: UIViewController {
     

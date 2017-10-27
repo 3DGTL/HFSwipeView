@@ -246,7 +246,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-HFSwipeView_Example/Pods-HFSwipeView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HFSwipeView/HFSwipeView.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
-				"${BUILT_PRODUCTS_DIR}/TinyLog/TinyLog.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
