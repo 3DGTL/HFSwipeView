@@ -177,7 +177,7 @@ extension HFSwipeView {
         }
         
         guard let indexPath = indexPathForItemAtPoint(collectionView.contentOffset) else {
-            logw("indexPathForItemAtPoint returned nil.")
+            print(("indexPathForItemAtPoint returned nil.")
             return
         }
         
@@ -193,7 +193,7 @@ extension HFSwipeView {
             if let view = indexViewMapper[currentRealPage] {
                 dataSource?.swipeView?(self, needUpdateCurrentViewForIndexPath: displayIndex, view: view)
             } else {
-                logw("Failed to retrieve current view from indexViewMapper for indexPath: \(indexPath.row)")
+                print(("Failed to retrieve current view from indexViewMapper for indexPath: \(indexPath.row)")
             }
             print("[\(self.tag)]: \(currentPage)/\(count - 1) - \(currentRealPage)/\(realViewCount - 1)")
         }
