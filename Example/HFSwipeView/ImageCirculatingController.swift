@@ -88,7 +88,7 @@ class ImageCirculatingController: UIViewController {
             imageView.image = UIImage(named: "IMG_0\((indexPath.row % 6) + 1)")
             imageView.setBorder(1, color: .black)
             
-            print("[\(indexPath.row)] -> isCurrent: \(isCurrent)")
+            //print("[\(indexPath.row)] -> isCurrent: \(isCurrent)")
         } else {
             assertionFailure("failed to retrieve UILabel for index: \(indexPath.row)")
         }
@@ -106,15 +106,15 @@ extension ImageCirculatingController {
 // MARK: - HFSwipeViewDelegate
 extension ImageCirculatingController: HFSwipeViewDelegate {
     func swipeView(_ swipeView: HFSwipeView, didFinishScrollAtIndexPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didSelectItemAtPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didChangeIndexPath indexPath: IndexPath, changedView view: UIView) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
 }
 
@@ -127,18 +127,18 @@ extension ImageCirculatingController: HFSwipeViewDataSource {
         return sampleCount
     }
     func swipeView(_ swipeView: HFSwipeView, viewForIndexPath indexPath: IndexPath) -> UIView {
-        print("[\(indexPath.row)]")
+        //print("[\(indexPath.row)]")
         let imageView = UIImageView(frame: CGRect(origin: .zero, size: itemSize))
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
         return imageView
     }
     func swipeView(_ swipeView: HFSwipeView, needUpdateViewForIndexPath indexPath: IndexPath, view: UIView) {
-        print("[\(indexPath.row)]")
+        //print("[\(indexPath.row)]")
         updateCellView(view, indexPath: indexPath, isCurrent: false)
     }
     func swipeView(_ swipeView: HFSwipeView, needUpdateCurrentViewForIndexPath indexPath: IndexPath, view: UIView) {
-        print("[\(indexPath.row)]")
+        //print("[\(indexPath.row)]")
         updateCellView(view, indexPath: indexPath, isCurrent: true)
     }
 }

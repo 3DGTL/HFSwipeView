@@ -85,7 +85,7 @@ extension EdgePreviewController: HFSwipeViewDataSource {
         }
     }
     func swipeView(_ swipeView: HFSwipeView, needUpdateCurrentViewForIndexPath indexPath: IndexPath, view: UIView) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
         currentFullView?.setBorder(0.5, color: UIColor.black)
         currentFullView = view as? UILabel
         currentFullView?.text = "\(indexPath.row)"
@@ -96,14 +96,14 @@ extension EdgePreviewController: HFSwipeViewDataSource {
 // MARK: - HFSwipeViewDelegate
 extension EdgePreviewController: HFSwipeViewDelegate {
     func swipeView(_ swipeView: HFSwipeView, didFinishScrollAtIndexPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didSelectItemAtPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didChangeIndexPath indexPath: IndexPath, changedView view: UIView) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
 }

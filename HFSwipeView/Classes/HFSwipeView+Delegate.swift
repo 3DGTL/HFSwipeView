@@ -16,7 +16,7 @@ extension HFSwipeView: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("\(realViewCount)")
+        //print("\(realViewCount)")
         return realViewCount
     }
     
@@ -40,7 +40,7 @@ extension HFSwipeView: UICollectionViewDataSource {
         
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kSwipeViewCellIdentifier, for: indexPath)
         guard let dataSource = self.dataSource else {
-            print("dataSource is nil")
+            //print("dataSource is nil")
             return cell
         }
         
@@ -68,15 +68,15 @@ extension HFSwipeView: UICollectionViewDataSource {
         layout(cell: cell, forCellView: cellView!)
         
         if displayIndex.row == currentPage {
-            print("[CURRENT][\(displayIndex.row)/\(indexPath.row)]")
+            //print("[CURRENT][\(displayIndex.row)/\(indexPath.row)]")
             if indexPath.row == currentRealPage {
                 dataSource.swipeView?(self, needUpdateCurrentViewForIndexPath: displayIndex, view: cellView!)
             } else {
-                print("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
+                //print("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
                 dataSource.swipeView?(self, needUpdateViewForIndexPath: displayIndex, view: cellView!)
             }
         } else {
-            print("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
+            //print("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
             dataSource.swipeView?(self, needUpdateViewForIndexPath: displayIndex, view: cellView!)
         }
         addDebugInfo(view: cellView!, realIndex: indexPath.row, dispIndex: displayIndex.row)
@@ -86,7 +86,7 @@ extension HFSwipeView: UICollectionViewDataSource {
     internal func cellForItemInNormalMode(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kSwipeViewCellIdentifier, for: indexPath)
         guard let dataSource = self.dataSource else {
-            print("dataSource is nil")
+            //print("dataSource is nil")
             return cell
         }
         var cellView: UIView? = nil
@@ -147,12 +147,12 @@ extension HFSwipeView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         guard var itemSize = self.itemSize else {
-            print("item size not provided")
+            //print("item size not provided")
             return .zero
         }
         
         if frame.size.width < itemSize.width {
-            print("item size cannot exceeds parent swipe view")
+            //print("item size cannot exceeds parent swipe view")
             return .zero
         }
         
@@ -219,11 +219,11 @@ extension HFSwipeView: UIScrollViewDelegate {
     }
     
     public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        print("[\(self.tag)]")
+        //print("[\(self.tag)]")
     }
     
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        print("[\(self.tag)]: \(scrollView.contentOffset.x), velocity: \(velocity.x), target: \(targetContentOffset.pointee.x)")
+        //print("[\(self.tag)]: \(scrollView.contentOffset.x), velocity: \(velocity.x), target: \(targetContentOffset.pointee.x)")
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -238,7 +238,7 @@ extension HFSwipeView: UIScrollViewDelegate {
     }
     
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        print("[\(self.tag)]")
+        //print("[\(self.tag)]")
         updateIndexBasedOnContentOffset()
         
         if circulating {

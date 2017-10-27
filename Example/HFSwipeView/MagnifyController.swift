@@ -87,15 +87,15 @@ class MagnifyController: UIViewController {
 // MARK: - HFSwipeViewDelegate
 extension MagnifyController: HFSwipeViewDelegate {
     func swipeView(_ swipeView: HFSwipeView, didFinishScrollAtIndexPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didSelectItemAtPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didChangeIndexPath indexPath: IndexPath, changedView view: UIView) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
 }
 

@@ -44,7 +44,7 @@ extension HFSwipeView {
         
         // corrected index
         guard let proposedIndexPath = indexPathForItemAtPoint(proposedOffset) else {
-            print("nearestIndexPath is nil")
+            //print("nearestIndexPath is nil")
             return .zero
         }
         
@@ -98,12 +98,12 @@ extension HFSwipeView {
         if offset.x < dummyWidth {
             let delta = dummyWidth - offset.x
             setContentOffsetWithoutCallingDelegate(CGPoint(x: contentSize.width - dummyWidth - delta, y: 0))
-            print("[\(self.tag)]: moved to last view, offset: \(scrollView.contentOffset)")
+            //print("[\(self.tag)]: moved to last view, offset: \(scrollView.contentOffset)")
             return true
         } else if offset.x >= contentSize.width - dummyWidth {
             let delta = offset.x - (contentSize.width - dummyWidth)
             setContentOffsetWithoutCallingDelegate(CGPoint(x: self.dummyWidth + delta, y: 0))
-            print("[\(self.tag)]: moved to first view!, offset: \(scrollView.contentOffset)")
+            //print("[\(self.tag)]: moved to first view!, offset: \(scrollView.contentOffset)")
             return true
         }
         return false

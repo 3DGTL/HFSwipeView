@@ -13,10 +13,10 @@ extension HFSwipeView {
     
     internal func moveRealPage(_ realPage: Int, animated: Bool) {
         if realPage >= 0 && realPage < realViewCount && realPage == currentRealPage {
-            print("moveRealPage received same page(\(realPage)) == currentPage(\(currentRealPage))")
+            //print("moveRealPage received same page(\(realPage)) == currentPage(\(currentRealPage))")
             return
         }
-        print("[\(self.tag)]: \(realPage)")
+        //print("[\(self.tag)]: \(realPage)")
         
         let realIndex = IndexPath(item: realPage, section: 0)
         
@@ -36,7 +36,7 @@ extension HFSwipeView {
         if let view = indexViewMapper[currentRealPage] {
             dataSource?.swipeView?(self, needUpdateCurrentViewForIndexPath: displayIndex, view: view)
         } else {
-            print("Failed to retrieve current view from indexViewMapper for indexPath: \(displayIndex.row)")
+            //print("Failed to retrieve current view from indexViewMapper for indexPath: \(displayIndex.row)")
         }
         
     }
@@ -52,6 +52,6 @@ extension HFSwipeView {
                 collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             }
         }
-        print("[\(self.tag)]: real -> \(indexPath.row)")
+        //print("[\(self.tag)]: real -> \(indexPath.row)")
     }
 }

@@ -76,7 +76,7 @@ class SimpleCirculatingController: UIViewController {
             label.text = "\(indexPath.row)"
             label.setBorder(1, color: .black)
             
-            print("[\(indexPath.row)] -> isCurrent: \(isCurrent)")
+            //print("[\(indexPath.row)] -> isCurrent: \(isCurrent)")
         } else {
             assertionFailure("failed to retrieve UILabel for index: \(indexPath.row)")
         }
@@ -86,15 +86,15 @@ class SimpleCirculatingController: UIViewController {
 // MARK: - HFSwipeViewDelegate
 extension SimpleCirculatingController: HFSwipeViewDelegate {
     func swipeView(_ swipeView: HFSwipeView, didFinishScrollAtIndexPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didSelectItemAtPath indexPath: IndexPath) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didChangeIndexPath indexPath: IndexPath, changedView view: UIView) {
-        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        //print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
 }
 
@@ -107,15 +107,15 @@ extension SimpleCirculatingController: HFSwipeViewDataSource {
         return sampleCount
     }
     func swipeView(_ swipeView: HFSwipeView, viewForIndexPath indexPath: IndexPath) -> UIView {
-        print("[\(indexPath.row)]")
+        //print("[\(indexPath.row)]")
         return UILabel(frame: CGRect(origin: .zero, size: itemSize))
     }
     func swipeView(_ swipeView: HFSwipeView, needUpdateViewForIndexPath indexPath: IndexPath, view: UIView) {
-        print("[\(indexPath.row)]")
+        //print("[\(indexPath.row)]")
         updateCellView(view, indexPath: indexPath, isCurrent: false)
     }
     func swipeView(_ swipeView: HFSwipeView, needUpdateCurrentViewForIndexPath indexPath: IndexPath, view: UIView) {
-        print("[\(indexPath.row)]")
+        //print("[\(indexPath.row)]")
         updateCellView(view, indexPath: indexPath, isCurrent: true)
     }
 }

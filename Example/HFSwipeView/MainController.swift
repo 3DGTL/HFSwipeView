@@ -16,6 +16,6 @@ extension UIView {
 }
 
 class MainController: UITableViewController {
-        print("tableView - didSelectRowAtIndexPath: \(indexPath.row), segue: \(segue)")
+        //print("tableView - didSelectRowAtIndexPath: \(indexPath.row), segue: \(segue)")
 }
 
