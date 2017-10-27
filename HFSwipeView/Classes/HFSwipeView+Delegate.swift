@@ -40,7 +40,7 @@ extension HFSwipeView: UICollectionViewDataSource {
         
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kSwipeViewCellIdentifier, for: indexPath)
         guard let dataSource = self.dataSource else {
-            print(("dataSource is nil")
+            print("dataSource is nil")
             return cell
         }
         
@@ -86,7 +86,7 @@ extension HFSwipeView: UICollectionViewDataSource {
     internal func cellForItemInNormalMode(_ collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kSwipeViewCellIdentifier, for: indexPath)
         guard let dataSource = self.dataSource else {
-            print(("dataSource is nil")
+            print("dataSource is nil")
             return cell
         }
         var cellView: UIView? = nil
@@ -147,12 +147,12 @@ extension HFSwipeView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         guard var itemSize = self.itemSize else {
-            print(("item size not provided")
+            print("item size not provided")
             return .zero
         }
         
         if frame.size.width < itemSize.width {
-            print(("item size cannot exceeds parent swipe view")
+            print("item size cannot exceeds parent swipe view")
             return .zero
         }
         

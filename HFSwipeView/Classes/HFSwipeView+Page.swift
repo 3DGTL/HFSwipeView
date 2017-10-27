@@ -36,7 +36,7 @@ extension HFSwipeView {
         if let view = indexViewMapper[currentRealPage] {
             dataSource?.swipeView?(self, needUpdateCurrentViewForIndexPath: displayIndex, view: view)
         } else {
-            print(("Failed to retrieve current view from indexViewMapper for indexPath: \(displayIndex.row)")
+            print("Failed to retrieve current view from indexViewMapper for indexPath: \(displayIndex.row)")
         }
         
     }

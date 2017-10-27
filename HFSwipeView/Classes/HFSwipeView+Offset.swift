@@ -44,7 +44,7 @@ extension HFSwipeView {
         
         // corrected index
         guard let proposedIndexPath = indexPathForItemAtPoint(proposedOffset) else {
-            print(("nearestIndexPath is nil")
+            print("nearestIndexPath is nil")
             return .zero
         }
         
