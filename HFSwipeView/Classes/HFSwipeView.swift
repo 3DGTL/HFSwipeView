@@ -76,11 +76,11 @@ open class HFSwipeView: UIView {
     internal var contentInsets: UIEdgeInsets {
         if var insets = dataSource?.swipeViewContentInsets?(self) {
             if insets.top != 0 {
-                print(("Changing UIEdgeInsets.top for HFSwipeView is not supported yet, consider a container view instead.")
+                print("Changing UIEdgeInsets.top for HFSwipeView is not supported yet, consider a container view instead.")
                 insets.top = 0
             }
             if insets.bottom != 0 {
-                print(("Changing UIEdgeInsets.bottom for HFSwipeView is not supported yet, consider a container view instead.")
+                print("Changing UIEdgeInsets.bottom for HFSwipeView is not supported yet, consider a container view instead.")
                 insets.bottom = 0
             }
             return insets
@@ -140,7 +140,7 @@ open class HFSwipeView: UIView {
     open var count: Int { // showing count
         if circulating {
             if realViewCount < 0 {
-                print(("cannot use property \"count\" before set HFSwipeView.realViewCount")
+                print("cannot use property \"count\" before set HFSwipeView.realViewCount")
                 return -1
             }
             if realViewCount > 0 {
@@ -226,7 +226,7 @@ open class HFSwipeView: UIView {
     }
     
     deinit {
-        print(("Successfully released HFSwipeView object.")
+        print("Successfully released HFSwipeView object.")
     }
     
     fileprivate func prepareForInteraction() {
@@ -244,11 +244,11 @@ open class HFSwipeView: UIView {
         // retrieve item size
         itemSize = dataSource?.swipeViewItemSize(self)
         guard let itemSize = itemSize else {
-            print(("item size not provided")
+            print("item size not provided")
             return false
         }
         if itemSize == CGSize.zero {
-            print(("item size error: CGSizeZero")
+            print("item size error: CGSizeZero")
             return false
         } else {
             print("itemSize is \(itemSize)")
@@ -264,7 +264,7 @@ open class HFSwipeView: UIView {
                 // if given width is wider than needed space
                 if itemCount > 0 {
                     itemSpace = (frame.size.width - (itemSize.width * CGFloat(itemCount))) / CGFloat(itemCount)
-                    print(("successfully fixed itemSpace: \(itemSpace)")
+                    print("successfully fixed itemSpace: \(itemSpace)")
                 }
             }
             dummyCount = itemCount
