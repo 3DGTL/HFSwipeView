@@ -1,14 +1,11 @@
 PODS:
   - HFSwipeView (1.2.1):
     - PureLayout
-    - TinyLog
   - PureLayout (3.0.2)
-  - TinyLog (2.0.2)
 
 DEPENDENCIES:
   - HFSwipeView (from `../`)
   - PureLayout
-  - TinyLog
 
 EXTERNAL SOURCES:
   HFSwipeView:
@@ -17,7 +14,6 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   HFSwipeView: 88d1ff0ecc9e992da454ba4b0efef4104721233a
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  TinyLog: 4ce6debfcc8c95a3a910974378fd2c330c068a19
 
 PODFILE CHECKSUM: 2d413bcaa4b693917f61e1405f6097f73b0ea261
 
