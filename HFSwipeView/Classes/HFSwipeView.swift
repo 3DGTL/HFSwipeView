@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TinyLog
 import PureLayout
 
 // MARK: - HFSwipeViewDataSource
@@ -240,7 +239,7 @@ open class HFSwipeView: UIView {
         
         // retrieve item distance
         itemSpace = cgfloat(dataSource?.swipeViewItemDistance?(self), defaultValue: 0)
-        log("successfully set itemSpace: \(itemSpace)")
+        print("successfully set itemSpace: \(itemSpace)")
         
         // retrieve item size
         itemSize = dataSource?.swipeViewItemSize(self)
@@ -252,7 +251,7 @@ open class HFSwipeView: UIView {
             loge("item size error: CGSizeZero")
             return false
         } else {
-            log("itemSize is \(itemSize)")
+            print("itemSize is \(itemSize)")
         }
         
         // retrieve item count
@@ -271,11 +270,11 @@ open class HFSwipeView: UIView {
             dummyCount = itemCount
             if dummyCount >= 1 {
                 dummyWidth = CGFloat(dummyCount) * (itemSize.width + itemSpace)
-                log("successfully set dummyCount: \(dummyCount), dummyWidth: \(dummyWidth)")
+                print("successfully set dummyCount: \(dummyCount), dummyWidth: \(dummyWidth)")
             }
             
             realViewCount = itemCount > 0 ? itemCount + dummyCount * 2 : 0
-            log("successfully set realViewCount: \(realViewCount)")
+            print("successfully set realViewCount: \(realViewCount)")
             
         } else {
             collectionView.alwaysBounceHorizontal = true
@@ -290,7 +289,7 @@ open class HFSwipeView: UIView {
         }
         (collectionView.collectionViewLayout as? HFSwipeViewFlowLayout)?.itemSize = itemSize
         setContentSizeWithoutCallingDelegate(contentSize)
-        log("successfully set content size: \(collectionView.contentSize)")
+        print("successfully set content size: \(collectionView.contentSize)")
         
         return true
     }
@@ -351,7 +350,7 @@ extension HFSwipeView {
     open func movePage(_ page: Int, animated: Bool) {
         
         if page == currentPage {
-            log("movePage received same page(\(page)) == currentPage(\(currentPage))")
+            print("movePage received same page(\(page)) == currentPage(\(currentPage))")
             autoAlign(collectionView, indexPath: IndexPath(item: currentRealPage, section: 0))
             return
         }

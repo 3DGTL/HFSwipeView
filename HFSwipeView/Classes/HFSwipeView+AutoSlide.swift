@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TinyLog
 
 // MARK: - Auto Slide
 extension HFSwipeView {

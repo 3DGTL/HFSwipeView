@@ -7,17 +7,16 @@
 //
 
 import UIKit
-import TinyLog
 
 // MARK: - Page Control
 extension HFSwipeView {
     
     internal func moveRealPage(_ realPage: Int, animated: Bool) {
         if realPage >= 0 && realPage < realViewCount && realPage == currentRealPage {
-            log("moveRealPage received same page(\(realPage)) == currentPage(\(currentRealPage))")
+            print("moveRealPage received same page(\(realPage)) == currentPage(\(currentRealPage))")
             return
         }
-        log("[\(self.tag)]: \(realPage)")
+        print("[\(self.tag)]: \(realPage)")
         
         let realIndex = IndexPath(item: realPage, section: 0)
         
@@ -53,6 +52,6 @@ extension HFSwipeView {
                 collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             }
         }
-        log("[\(self.tag)]: real -> \(indexPath.row)")
+        print("[\(self.tag)]: real -> \(indexPath.row)")
     }
 }

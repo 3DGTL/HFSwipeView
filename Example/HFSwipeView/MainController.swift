@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TinyLog
 
 extension UIView {
     public func setBorder(_ width: CGFloat, color: UIColor) {
@@ -76,7 +75,7 @@ class MainController: UIViewController {
 extension MainController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let segue: String = menuItems.object(at: indexPath.row) as! String
-        log("tableView - didSelectRowAtIndexPath: \(indexPath.row), segue: \(segue)")
+        print("tableView - didSelectRowAtIndexPath: \(indexPath.row), segue: \(segue)")
         self.performSegue(withIdentifier: segue, sender: self)
     }
 }

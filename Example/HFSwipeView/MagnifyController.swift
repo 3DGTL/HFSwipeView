@@ -8,7 +8,6 @@
 
 import UIKit
 import HFSwipeView
-import TinyLog
 
 class MagnifyController: UIViewController {
     
@@ -89,15 +88,15 @@ class MagnifyController: UIViewController {
 // MARK: - HFSwipeViewDelegate
 extension MagnifyController: HFSwipeViewDelegate {
     func swipeView(_ swipeView: HFSwipeView, didFinishScrollAtIndexPath indexPath: IndexPath) {
-        log("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didSelectItemAtPath indexPath: IndexPath) {
-        log("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
     
     func swipeView(_ swipeView: HFSwipeView, didChangeIndexPath indexPath: IndexPath, changedView view: UIView) {
-        log("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
+        print("HFSwipeView(\(swipeView.tag)) -> \(indexPath.row)")
     }
 }
 

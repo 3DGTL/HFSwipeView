@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TinyLog
 
 // MARK: - UICollectionViewDataSource
 extension HFSwipeView: UICollectionViewDataSource {
@@ -17,7 +16,7 @@ extension HFSwipeView: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        log("\(realViewCount)")
+        print("\(realViewCount)")
         return realViewCount
     }
     
@@ -66,15 +65,15 @@ extension HFSwipeView: UICollectionViewDataSource {
         }
         
         if displayIndex.row == currentPage {
-            log("[CURRENT][\(displayIndex.row)/\(indexPath.row)]")
+            print("[CURRENT][\(displayIndex.row)/\(indexPath.row)]")
             if indexPath.row == currentRealPage {
                 dataSource.swipeView?(self, needUpdateCurrentViewForIndexPath: displayIndex, view: cellView!)
             } else {
-                log("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
+                print("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
                 dataSource.swipeView?(self, needUpdateViewForIndexPath: displayIndex, view: cellView!)
             }
         } else {
-            log("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
+            print("[NORMAL][\(displayIndex.row)/\(indexPath.row)]")
             dataSource.swipeView?(self, needUpdateViewForIndexPath: displayIndex, view: cellView!)
         }
         addDebugInfo(view: cellView!, realIndex: indexPath.row, dispIndex: displayIndex.row)
@@ -217,11 +216,11 @@ extension HFSwipeView: UIScrollViewDelegate {
     }
     
     public func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        log("[\(self.tag)]")
+        print("[\(self.tag)]")
     }
     
     public func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        log("[\(self.tag)]: \(scrollView.contentOffset.x), velocity: \(velocity.x), target: \(targetContentOffset.pointee.x)")
+        print("[\(self.tag)]: \(scrollView.contentOffset.x), velocity: \(velocity.x), target: \(targetContentOffset.pointee.x)")
     }
     
     public func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
@@ -236,7 +235,7 @@ extension HFSwipeView: UIScrollViewDelegate {
     }
     
     public func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        log("[\(self.tag)]")
+        print("[\(self.tag)]")
         updateIndexBasedOnContentOffset()
         
         if circulating {
