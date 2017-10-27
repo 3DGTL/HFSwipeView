@@ -39,6 +39,7 @@ class SimpleController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(swipeView)
+        title = "Simple Example"
     }
     
     override func updateViewConstraints() {

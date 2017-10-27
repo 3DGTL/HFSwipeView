@@ -40,6 +40,7 @@ class SimpleCirculatingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(swipeView)
+        title = "Circulating"
     }
     
     override func updateViewConstraints() {

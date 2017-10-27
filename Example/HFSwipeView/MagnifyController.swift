@@ -41,9 +41,8 @@ class MagnifyController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         view.addSubview(swipeView)
+        title = "Magnifying"
     }
     
     override func updateViewConstraints() {
