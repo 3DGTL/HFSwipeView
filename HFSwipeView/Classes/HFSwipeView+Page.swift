@@ -21,8 +21,16 @@ extension HFSwipeView {
         let realIndex = IndexPath(item: realPage, section: 0)
         
         if autoAlignEnabled {
+
+            //bugfix for circulating swipeviews where the offset is too high
             let offset = centeredOffsetForIndex(realIndex)
-            collectionView.setContentOffset(offset, animated: animated)
+            if circulating {
+                let current = collectionView.indexPathsForVisibleItems.first ?? realIndex
+                let indexPath = IndexPath(row: current.row + 1, section: 0)
+                collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+            } else {
+                collectionView.setContentOffset(offset, animated: animated)
+            }
         }
         
         if !circulating {
